@@ -43,7 +43,7 @@ namespace CustomServicePlugin
                 XdbOperationBatch batch = operation.Batch;
 
                 // we add a facet only if it is not already set
-                if (HasSetFacetOperation(batch))
+                if (HasSetFacetOperation(operation))
                 {
                     return;
                 }
@@ -53,9 +53,9 @@ namespace CustomServicePlugin
             }
         }
 
-        private bool HasSetFacetOperation(XdbOperationBatch batch)
+        private bool HasSetFacetOperation(AddContactOperation operation)
         {
-            var setFacetOperations = batch.Operations.OfType<SetFacetOperation>();
+            var setFacetOperations = operation.Successors.OfType<SetFacetOperation>();
             return setFacetOperations.Any(op => op.FacetReference.FacetKey == PersonalInformation.DefaultFacetKey);
         }
     }
