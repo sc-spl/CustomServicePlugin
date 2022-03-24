@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+    <Sitecore>
+        <XConnect>
+            <Collection>
+                <Services>
+                    <CustomServicePlugin.AddFacetServicePlugin>
+                        <Type>CustomServicePlugin.AddFacetServicePlugin, CustomServicePlugin</Type>
+                        <As>Sitecore.XConnect.Service.Plugins.IXConnectServicePlugin, Sitecore.XConnect.Service.Plugins</As>
+                        <LifeTime>Singleton</LifeTime>
+                    </CustomServicePlugin.AddFacetServicePlugin>
+                </Services>
+            </Collection>
+        </XConnect>
+    </Sitecore>
+</Settings>
